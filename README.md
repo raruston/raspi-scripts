@@ -1,5 +1,5 @@
 # raspi-scripts
-Simple Sample / Demo / Utility Scripts for Raspberry Pi 
+Simple Sample / Demo / Utility Scripts for Raspberry Pi
 
 ## python/pibrella-wiimote.py
 Simple script to allow a WiiMote to connect to a Raspberry Pi and provide input to control two motors connected to a Pibrella board. The script also uses the LEDs and Button on the Pibrella to show status, and connect the Wiimote respectively. 
@@ -31,3 +31,27 @@ Simple script to allow a WiiMote to connect to a Raspberry Pi and provide input 
 
 * This script was based on the Raspberry Pi Spy post here:  
 http://www.raspberrypi-spy.co.uk/2013/02/nintendo-wii-remote-python-and-the-raspberry-pi/
+
+
+
+
+## python/explorerhat-wiimote.py
+This script is the same as the pibrella-wiimote script, but for ExplorerHAT. It uses the motor outputs from the ExplorerHAT Pro, but can easily be changed to use a standard ExplorerHAT if required. 
+
+* Requires python-cwiid (sudo apt-get install python-cwiid)
+* Requires ExplorerHAT & Library (https://github.com/pimoroni/explorer-hat)
+
+#### To Run:
+`python explorerhat-wiimote.py`
+
+#### Notes:
+* The LEDs show 3 states   
+  Red - WiiMote not connected  
+   Flashing Yellow - Attempting to connect Pi to WiiMote  
+   Green - WiiMote and Pi connected  
+   
+   
+* To initiate connection, press buttons 1 and 2 on the WiiMote together, then press button 1 on the ExplorerHAT. The same LED indicators apply as for the pibrella-wiimote script.
+
+
+* If the WiiMote disconnects unexpectedly, the script will not handle this and the resulting behaviour is 'undefined'.
